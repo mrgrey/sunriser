@@ -20,4 +20,8 @@ public class CanselBuildingCommandListener extends AbstractBuildingCommandListen
         buildingItem.addCommand(CommandFactory.BUILD_COMMAND);
         buildingItem.setItemCommandListener(new CreateBuildingItemCommandListener());
     }
+
+    public boolean isApplicaple(int commandAction) {
+        return commandAction == CommandAction.CANSEL;
+    }
 }

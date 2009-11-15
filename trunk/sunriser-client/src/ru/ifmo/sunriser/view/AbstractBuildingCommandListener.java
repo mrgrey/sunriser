@@ -14,15 +14,18 @@ public abstract  class AbstractBuildingCommandListener implements ItemCommandLis
 
     public void commandAction(Command c, Item item) {
         final TypedCommand command = (TypedCommand) c;
-        if (command.getActionType() == CommandAction.INFO) {
-
-        } else {
-            final BuildingItem buildingItem = (BuildingItem) item;
-            commandAction(command, buildingItem);
-        }
+        final BuildingItem buildingItem = (BuildingItem) item;
+        commandAction(command, buildingItem);
+        
     }
 
     public abstract void commandAction(TypedCommand command, BuildingItem item);
+
+
+    /**
+     * checks that action is valid to execute
+     */
+    public abstract boolean isApplicaple(int commandAction);
 
 
 }

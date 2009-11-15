@@ -24,4 +24,8 @@ public class CreateBuildingItemCommandListener extends AbstractBuildingCommandLi
 
     }
 
+    public boolean isApplicaple(int commandAction) {
+        return commandAction == CommandAction.BUILD;
+    }
+
 }
