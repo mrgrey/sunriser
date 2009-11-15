@@ -25,16 +25,25 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
 
     //<editor-fold defaultstate="collapsed" desc=" Generated Fields ">//GEN-BEGIN:|fields|0|
     private Form buildingsForm;
+    private Form capitansForm;
+    private Form shipsForm;
     private Form planetForm;
     private StringItem unitsString;
-    private StringItem stringItem3;
+    private StringItem resoursesString;
     private StringItem buildingsString;
-    private Form shipsForm;
-    private Form capitansForm;
+    private StringItem capitansString;
+    private StringItem shipsString;
+    private Form resoursesForm;
     private Command exitCommand1;
     private Command buildingsCommand;
     private Command exitCommand;
     private Command planetCommand;
+    private Command exitCommand2;
+    private Command okCommand;
+    private Command unitsCommand;
+    private Command resoursesCommand;
+    private Command capitansCommands;
+    private Command shipsCommand;
     //</editor-fold>//GEN-END:|fields|0|
 
     /**
@@ -111,7 +120,7 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
     public Form getPlanetForm() {
         if (planetForm == null) {//GEN-END:|34-getter|0|34-preInit
             // write pre-init user code here
-            planetForm = new Form("form1", new Item[] { getBuildingsString(), getUnitsString(), getStringItem3() });//GEN-BEGIN:|34-getter|1|34-postInit
+            planetForm = new Form("form1", new Item[] { getBuildingsString(), getUnitsString(), getResoursesString(), getCapitansString(), getShipsString() });//GEN-BEGIN:|34-getter|1|34-postInit
             planetForm.addCommand(getExitCommand());
             planetForm.setCommandListener(this);//GEN-END:|34-getter|1|34-postInit
             // write post-init user code here
@@ -133,17 +142,35 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
                 // write pre-action user code here
                 switchDisplayable(null, getPlanetForm());//GEN-LINE:|7-commandAction|2|70-postAction
                 // write post-action user code here
-            }//GEN-BEGIN:|7-commandAction|3|43-preAction
-        } else if (displayable == planetForm) {
-            if (command == exitCommand) {//GEN-END:|7-commandAction|3|43-preAction
+            }//GEN-BEGIN:|7-commandAction|3|81-preAction
+        } else if (displayable == capitansForm) {
+            if (command == exitCommand1) {//GEN-END:|7-commandAction|3|81-preAction
                 // write pre-action user code here
-//GEN-LINE:|7-commandAction|4|43-postAction
+                switchDisplayable(null, getPlanetForm());//GEN-LINE:|7-commandAction|4|81-postAction
                 // write post-action user code here
-            }//GEN-BEGIN:|7-commandAction|5|7-postCommandAction
-        }//GEN-END:|7-commandAction|5|7-postCommandAction
+            }//GEN-BEGIN:|7-commandAction|5|43-preAction
+        } else if (displayable == planetForm) {
+            if (command == exitCommand) {//GEN-END:|7-commandAction|5|43-preAction
+                // write pre-action user code here
+//GEN-LINE:|7-commandAction|6|43-postAction
+                // write post-action user code here
+            }//GEN-BEGIN:|7-commandAction|7|93-preAction
+        } else if (displayable == resoursesForm) {
+            if (command == exitCommand1) {//GEN-END:|7-commandAction|7|93-preAction
+                // write pre-action user code here
+                switchDisplayable(null, getPlanetForm());//GEN-LINE:|7-commandAction|8|93-postAction
+                // write post-action user code here
+            }//GEN-BEGIN:|7-commandAction|9|79-preAction
+        } else if (displayable == shipsForm) {
+            if (command == exitCommand1) {//GEN-END:|7-commandAction|9|79-preAction
+                // write pre-action user code here
+                switchDisplayable(null, getPlanetForm());//GEN-LINE:|7-commandAction|10|79-postAction
+                // write post-action user code here
+            }//GEN-BEGIN:|7-commandAction|11|7-postCommandAction
+        }//GEN-END:|7-commandAction|11|7-postCommandAction
         // write post-action user code here
-    }//GEN-BEGIN:|7-commandAction|6|
-    //</editor-fold>//GEN-END:|7-commandAction|6|
+    }//GEN-BEGIN:|7-commandAction|12|
+    //</editor-fold>//GEN-END:|7-commandAction|12|
 
     //<editor-fold defaultstate="collapsed" desc=" Generated Getter: exitCommand ">//GEN-BEGIN:|42-getter|0|42-preInit
     /**
@@ -181,8 +208,32 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
                 // write pre-action user code here
                 switchDisplayable(null, getBuildingsForm());//GEN-LINE:|8-itemCommandAction|2|67-postAction
                 // write post-action user code here
-            }//GEN-BEGIN:|8-itemCommandAction|3|8-postItemCommandAction
-        }//GEN-END:|8-itemCommandAction|3|8-postItemCommandAction
+            }//GEN-BEGIN:|8-itemCommandAction|3|91-preAction
+        } else if (item == capitansString) {
+            if (command == capitansCommands) {//GEN-END:|8-itemCommandAction|3|91-preAction
+                // write pre-action user code here
+                switchDisplayable(null, getCapitansForm());//GEN-LINE:|8-itemCommandAction|4|91-postAction
+                // write post-action user code here
+            }//GEN-BEGIN:|8-itemCommandAction|5|89-preAction
+        } else if (item == resoursesString) {
+            if (command == resoursesCommand) {//GEN-END:|8-itemCommandAction|5|89-preAction
+                // write pre-action user code here
+                switchDisplayable(null, getResoursesForm());//GEN-LINE:|8-itemCommandAction|6|89-postAction
+                // write post-action user code here
+            }//GEN-BEGIN:|8-itemCommandAction|7|97-preAction
+        } else if (item == shipsString) {
+            if (command == shipsCommand) {//GEN-END:|8-itemCommandAction|7|97-preAction
+                // write pre-action user code here
+                switchDisplayable(null, getShipsForm());//GEN-LINE:|8-itemCommandAction|8|97-postAction
+                // write post-action user code here
+            }//GEN-BEGIN:|8-itemCommandAction|9|87-preAction
+        } else if (item == unitsString) {
+            if (command == unitsCommand) {//GEN-END:|8-itemCommandAction|9|87-preAction
+                // write pre-action user code here
+//GEN-LINE:|8-itemCommandAction|10|87-postAction
+                // write post-action user code here
+            }//GEN-BEGIN:|8-itemCommandAction|11|8-postItemCommandAction
+        }//GEN-END:|8-itemCommandAction|11|8-postItemCommandAction
         else {
             for(int i = 0; i < buildingItems.size(); i++) {
                 final BuildingItem bItem = (BuildingItem) buildingItems.elementAt(i);
@@ -205,8 +256,8 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
 
         }
         // write post-action user code here
-    }//GEN-BEGIN:|8-itemCommandAction|4|
-    //</editor-fold>//GEN-END:|8-itemCommandAction|4|
+    }//GEN-BEGIN:|8-itemCommandAction|12|
+    //</editor-fold>//GEN-END:|8-itemCommandAction|12|
 
 
     //<editor-fold defaultstate="collapsed" desc=" Generated Getter: planetCommand ">//GEN-BEGIN:|60-getter|0|60-preInit
@@ -249,25 +300,31 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
     public StringItem getUnitsString() {
         if (unitsString == null) {//GEN-END:|64-getter|0|64-preInit
             // write pre-init user code here
-            unitsString = new StringItem("Units", null);//GEN-LINE:|64-getter|1|64-postInit
+            unitsString = new StringItem("Units", null);//GEN-BEGIN:|64-getter|1|64-postInit
+            unitsString.addCommand(getUnitsCommand());
+            unitsString.setItemCommandListener(this);//GEN-END:|64-getter|1|64-postInit
             // write post-init user code here
         }//GEN-BEGIN:|64-getter|2|
         return unitsString;
     }
     //</editor-fold>//GEN-END:|64-getter|2|
+    //</editor-fold>
+    //</editor-fold>
 
-    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: stringItem3 ">//GEN-BEGIN:|65-getter|0|65-preInit
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: resoursesString ">//GEN-BEGIN:|65-getter|0|65-preInit
     /**
-     * Returns an initiliazed instance of stringItem3 component.
+     * Returns an initiliazed instance of resoursesString component.
      * @return the initialized component instance
      */
-    public StringItem getStringItem3() {
-        if (stringItem3 == null) {//GEN-END:|65-getter|0|65-preInit
+    public StringItem getResoursesString() {
+        if (resoursesString == null) {//GEN-END:|65-getter|0|65-preInit
             // write pre-init user code here
-            stringItem3 = new StringItem("Resourses", null);//GEN-LINE:|65-getter|1|65-postInit
+            resoursesString = new StringItem("Resourses", null);//GEN-BEGIN:|65-getter|1|65-postInit
+            resoursesString.addCommand(getResoursesCommand());
+            resoursesString.setItemCommandListener(this);//GEN-END:|65-getter|1|65-postInit
             // write post-init user code here
         }//GEN-BEGIN:|65-getter|2|
-        return stringItem3;
+        return resoursesString;
     }
     //</editor-fold>//GEN-END:|65-getter|2|
 
@@ -337,7 +394,9 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
     public Form getShipsForm() {
         if (shipsForm == null) {//GEN-END:|75-getter|0|75-preInit
             // write pre-init user code here
-            shipsForm = new Form("form");//GEN-LINE:|75-getter|1|75-postInit
+            shipsForm = new Form("form");//GEN-BEGIN:|75-getter|1|75-postInit
+            shipsForm.addCommand(getExitCommand1());
+            shipsForm.setCommandListener(this);//GEN-END:|75-getter|1|75-postInit
             // write post-init user code here
         }//GEN-BEGIN:|75-getter|2|
         return shipsForm;
@@ -353,12 +412,160 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
     public Form getCapitansForm() {
         if (capitansForm == null) {//GEN-END:|76-getter|0|76-preInit
             // write pre-init user code here
-            capitansForm = new Form("form");//GEN-LINE:|76-getter|1|76-postInit
+            capitansForm = new Form("form");//GEN-BEGIN:|76-getter|1|76-postInit
+            capitansForm.addCommand(getExitCommand1());
+            capitansForm.setCommandListener(this);//GEN-END:|76-getter|1|76-postInit
             // write post-init user code here
         }//GEN-BEGIN:|76-getter|2|
         return capitansForm;
     }
     //</editor-fold>//GEN-END:|76-getter|2|
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: exitCommand2 ">//GEN-BEGIN:|77-getter|0|77-preInit
+    /**
+     * Returns an initiliazed instance of exitCommand2 component.
+     * @return the initialized component instance
+     */
+    public Command getExitCommand2() {
+        if (exitCommand2 == null) {//GEN-END:|77-getter|0|77-preInit
+            // write pre-init user code here
+            exitCommand2 = new Command("Exit", Command.EXIT, 0);//GEN-LINE:|77-getter|1|77-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|77-getter|2|
+        return exitCommand2;
+    }
+    //</editor-fold>//GEN-END:|77-getter|2|
+    //</editor-fold>
+    //</editor-fold>
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: capitansString ">//GEN-BEGIN:|85-getter|0|85-preInit
+    /**
+     * Returns an initiliazed instance of capitansString component.
+     * @return the initialized component instance
+     */
+    public StringItem getCapitansString() {
+        if (capitansString == null) {//GEN-END:|85-getter|0|85-preInit
+            // write pre-init user code here
+            capitansString = new StringItem("Capitans", null);//GEN-BEGIN:|85-getter|1|85-postInit
+            capitansString.addCommand(getCapitansCommands());
+            capitansString.setItemCommandListener(this);//GEN-END:|85-getter|1|85-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|85-getter|2|
+        return capitansString;
+    }
+    //</editor-fold>//GEN-END:|85-getter|2|
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: okCommand ">//GEN-BEGIN:|83-getter|0|83-preInit
+    /**
+     * Returns an initiliazed instance of okCommand component.
+     * @return the initialized component instance
+     */
+    public Command getOkCommand() {
+        if (okCommand == null) {//GEN-END:|83-getter|0|83-preInit
+            // write pre-init user code here
+            okCommand = new Command("Ok", Command.OK, 0);//GEN-LINE:|83-getter|1|83-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|83-getter|2|
+        return okCommand;
+    }
+    //</editor-fold>//GEN-END:|83-getter|2|
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: unitsCommand ">//GEN-BEGIN:|86-getter|0|86-preInit
+    /**
+     * Returns an initiliazed instance of unitsCommand component.
+     * @return the initialized component instance
+     */
+    public Command getUnitsCommand() {
+        if (unitsCommand == null) {//GEN-END:|86-getter|0|86-preInit
+            // write pre-init user code here
+            unitsCommand = new Command("Item", Command.ITEM, 0);//GEN-LINE:|86-getter|1|86-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|86-getter|2|
+        return unitsCommand;
+    }
+    //</editor-fold>//GEN-END:|86-getter|2|
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: resoursesCommand ">//GEN-BEGIN:|88-getter|0|88-preInit
+    /**
+     * Returns an initiliazed instance of resoursesCommand component.
+     * @return the initialized component instance
+     */
+    public Command getResoursesCommand() {
+        if (resoursesCommand == null) {//GEN-END:|88-getter|0|88-preInit
+            // write pre-init user code here
+            resoursesCommand = new Command("Item", Command.ITEM, 0);//GEN-LINE:|88-getter|1|88-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|88-getter|2|
+        return resoursesCommand;
+    }
+    //</editor-fold>//GEN-END:|88-getter|2|
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: capitansCommands ">//GEN-BEGIN:|90-getter|0|90-preInit
+    /**
+     * Returns an initiliazed instance of capitansCommands component.
+     * @return the initialized component instance
+     */
+    public Command getCapitansCommands() {
+        if (capitansCommands == null) {//GEN-END:|90-getter|0|90-preInit
+            // write pre-init user code here
+            capitansCommands = new Command("Item", Command.ITEM, 0);//GEN-LINE:|90-getter|1|90-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|90-getter|2|
+        return capitansCommands;
+    }
+    //</editor-fold>//GEN-END:|90-getter|2|
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: resoursesForm ">//GEN-BEGIN:|92-getter|0|92-preInit
+    /**
+     * Returns an initiliazed instance of resoursesForm component.
+     * @return the initialized component instance
+     */
+    public Form getResoursesForm() {
+        if (resoursesForm == null) {//GEN-END:|92-getter|0|92-preInit
+            // write pre-init user code here
+            resoursesForm = new Form("form");//GEN-BEGIN:|92-getter|1|92-postInit
+            resoursesForm.addCommand(getExitCommand1());
+            resoursesForm.setCommandListener(this);//GEN-END:|92-getter|1|92-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|92-getter|2|
+        return resoursesForm;
+    }
+    //</editor-fold>//GEN-END:|92-getter|2|
+    //</editor-fold>
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: shipsString ">//GEN-BEGIN:|95-getter|0|95-preInit
+    /**
+     * Returns an initiliazed instance of shipsString component.
+     * @return the initialized component instance
+     */
+    public StringItem getShipsString() {
+        if (shipsString == null) {//GEN-END:|95-getter|0|95-preInit
+            // write pre-init user code here
+            shipsString = new StringItem("Ships", null);//GEN-BEGIN:|95-getter|1|95-postInit
+            shipsString.addCommand(getShipsCommand());
+            shipsString.setItemCommandListener(this);//GEN-END:|95-getter|1|95-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|95-getter|2|
+        return shipsString;
+    }
+    //</editor-fold>//GEN-END:|95-getter|2|
+
+    //<editor-fold defaultstate="collapsed" desc=" Generated Getter: shipsCommand ">//GEN-BEGIN:|96-getter|0|96-preInit
+    /**
+     * Returns an initiliazed instance of shipsCommand component.
+     * @return the initialized component instance
+     */
+    public Command getShipsCommand() {
+        if (shipsCommand == null) {//GEN-END:|96-getter|0|96-preInit
+            // write pre-init user code here
+            shipsCommand = new Command("Item", Command.ITEM, 0);//GEN-LINE:|96-getter|1|96-postInit
+            // write post-init user code here
+        }//GEN-BEGIN:|96-getter|2|
+        return shipsCommand;
+    }
+    //</editor-fold>//GEN-END:|96-getter|2|
 
     /**
      * Returns a display instance.

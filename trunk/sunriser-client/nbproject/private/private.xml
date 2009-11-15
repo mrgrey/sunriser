@@ -1,19 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/1"/>
-    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/1">
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/model/Player.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/view/View.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/view/BuildingItem.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/view/BuildingItemFactory.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/view/AbstractBuildingCommandListener.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/view/CanselBuildingCommandListener.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/view/CreateBuildingItemCommandListener.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/view/CommandFactory.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/model/IBuilding.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/model/SimpleBuilding.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/util/Time.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/net/Game.java</file>
-        <file>file:/home/botdes/NetBeansProjects/trunk/Sunriser/src/ru/ifmo/sunriser/view/DestroyBuildingCommandListener.java</file>
-    </open-files>
 </project-private>
