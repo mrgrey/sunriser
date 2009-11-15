@@ -14,8 +14,10 @@ public abstract  class AbstractBuildingCommandListener implements ItemCommandLis
 
     public void commandAction(Command c, Item item) {
         final TypedCommand command = (TypedCommand) c;
-        final BuildingItem buildingItem = (BuildingItem) item;
-        commandAction(command, buildingItem);
+        if (isApplicaple(command.getActionType())) {
+            final BuildingItem buildingItem = (BuildingItem) item;
+            commandAction(command, buildingItem);
+        }
         
     }
 
