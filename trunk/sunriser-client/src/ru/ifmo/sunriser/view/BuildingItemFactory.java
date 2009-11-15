@@ -24,10 +24,11 @@ public class BuildingItemFactory {
             default:
                 throw new RuntimeException("cannot happend");
         }
-        final BuildingItem stringItem = new BuildingItem(building.getName(), building.getStatusAsString(), building);
-        stringItem.addCommand(createBuildingCommand(building));
-        stringItem.setItemCommandListener(commandListener);
-        return stringItem;
+        final BuildingItem buildingItem = new BuildingItem(building.getName(), building.getStatusAsString(), building);
+        buildingItem.setDefaultCommand(createInfoCommand());
+        buildingItem.addCommand(createBuildingCommand(building));
+        buildingItem.setItemCommandListener(commandListener);
+        return buildingItem;
     }
 
     private static Command createBuildingCommand(IBuilding building) {
@@ -41,6 +42,10 @@ public class BuildingItemFactory {
             default:
                  throw new RuntimeException("cannot happend");
         }
+    }
+
+    public static Command createInfoCommand() {
+        return CommandFactory.INFO_COMMAND;
     }
 
 

@@ -11,7 +11,7 @@ import ru.ifmo.sunriser.model.IBuilding;
  */
 public class CreateBuildingItemCommandListener extends AbstractBuildingCommandListener {
 
-    public void commandAction(Command command, BuildingItem buildingItem) {
+    public void commandAction(TypedCommand command, BuildingItem buildingItem) {
         IBuilding building = buildingItem.getBuilding();
         if (building.build()) {
             buildingItem.setText(building.getStatusAsString());
@@ -19,8 +19,9 @@ public class CreateBuildingItemCommandListener extends AbstractBuildingCommandLi
             buildingItem.setText("cannot build");
         }
         buildingItem.removeCommand(command);
-        buildingItem.addCommand(CommandFactory.CANSEL_COMMAND);
+        buildingItem.setDefaultCommand(CommandFactory.CANSEL_COMMAND);
         buildingItem.setItemCommandListener(new CanselBuildingCommandListener());
+
     }
 
 }

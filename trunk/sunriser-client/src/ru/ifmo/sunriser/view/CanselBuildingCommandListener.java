@@ -9,7 +9,7 @@ import ru.ifmo.sunriser.model.IBuilding;
  */
 public class CanselBuildingCommandListener extends AbstractBuildingCommandListener {
 
-    public void commandAction(Command command, BuildingItem buildingItem) {
+    public void commandAction(TypedCommand command, BuildingItem buildingItem) {
         IBuilding building = buildingItem.getBuilding();
         if (building.cansel()) {
             buildingItem.setText(building.getStatusAsString());
