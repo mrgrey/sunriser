@@ -20,8 +20,8 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
 
     private boolean midletPaused = false;
     private final Player player;
-
     private Vector buildingItems;
+    
 
     //<editor-fold defaultstate="collapsed" desc=" Generated Fields ">//GEN-BEGIN:|fields|0|
     private Form buildingsForm;
@@ -235,24 +235,24 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
             }//GEN-BEGIN:|8-itemCommandAction|11|8-postItemCommandAction
         }//GEN-END:|8-itemCommandAction|11|8-postItemCommandAction
         else {
-            for(int i = 0; i < buildingItems.size(); i++) {
-                final BuildingItem bItem = (BuildingItem) buildingItems.elementAt(i);
-                if (item == bItem) {
-                    IBuilding building = bItem.getBuilding();
-                    if ("build".equals(command.getLabel()) && building.getState() == BuildingState.AVALIBLE) {
-                        if (building.build()) {
-                            bItem.setText("under construction");
-                        } else {
-                            bItem.setText("cannot build");
-                        }
-                    } else if ("cansel".equals(command.getLabel())
-                            && (building.getState() == BuildingState.BUILD
-                            || building.getState() == BuildingState.UNDER_CONSTRUCTION)) {
-                            building.cansel();
-                            bItem.setText("canselled");
-                    }
-                }
-            }
+//            for(int i = 0; i < buildingItems.size(); i++) {
+//                final BuildingItem bItem = (BuildingItem) buildingItems.elementAt(i);
+//                if (item == bItem) {
+//                    IBuilding building = bItem.getBuilding();
+//                    if ("build".equals(command.getLabel()) && building.getState() == BuildingState.AVALIBLE) {
+//                        if (building.build()) {
+//                            bItem.setText("under construction");
+//                        } else {
+//                            bItem.setText("cannot build");
+//                        }
+//                    } else if ("cansel".equals(command.getLabel())
+//                            && (building.getState() == BuildingState.BUILD
+//                            || building.getState() == BuildingState.UNDER_CONSTRUCTION)) {
+//                            building.cansel();
+//                            bItem.setText("canselled");
+//                    }
+//                }
+//            }
 
         }
         // write post-action user code here
@@ -358,8 +358,8 @@ public class View extends MIDlet implements   CommandListener, ItemCommandListen
             Vector vector = new Vector();
             Vector gameBuildings = player.getPlanet().getBuildings();
             for (int i = 0; i < gameBuildings.size(); i++) {
-                final Item buildingItem = BuildingItemFactory.createBuildingItem((IBuilding) gameBuildings.elementAt(i));
-           //     buildingItem.setItemCommandListener(this);
+                final Item buildingItem = BuildingItemFactory.createBuildingItem(
+                        (IBuilding) gameBuildings.elementAt(i), this);
                 vector.addElement(buildingItem);
                 buildingsForm.append(buildingItem);
             }
