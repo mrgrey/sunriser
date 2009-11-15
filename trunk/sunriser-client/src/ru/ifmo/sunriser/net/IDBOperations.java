@@ -16,6 +16,8 @@ public interface IDBOperations {
     //<IPlanet>
     Vector getPlanets();
 
-    public IPlanet getPlanet();
+    IPlanet getPlanet();
+
+    Player getPlayer();
 
 }

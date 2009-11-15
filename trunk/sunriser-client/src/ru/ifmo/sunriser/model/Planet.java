@@ -15,6 +15,7 @@ public class Planet implements IPlanet {
         this.buildings = buildings;
     }
 
+    //<IBuilding>
     public Vector getBuildings() {
         return buildings;
     }

@@ -19,7 +19,8 @@ public class InfoFormCommandListener implements CommandListener {
 
     public void commandAction(Command c, Displayable d) {
        if (c.getCommandType() == Command.EXIT) {
-           midlet.switchDisplayable(null, midlet.getBuildingsForm());
+    //       midlet.switchDisplayable(null, midlet.getBuildingsForm());
+           
        }
     }
 

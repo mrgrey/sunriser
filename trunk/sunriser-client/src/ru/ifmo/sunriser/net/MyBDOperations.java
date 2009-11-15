@@ -34,4 +34,8 @@ public class MyBDOperations implements IDBOperations {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    public Player getPlayer() {
+        return new Player(this);
+    }
+
 }

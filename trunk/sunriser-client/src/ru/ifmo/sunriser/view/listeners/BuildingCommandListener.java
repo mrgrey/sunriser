@@ -54,9 +54,11 @@ public class BuildingCommandListener implements ItemCommandListener {
 
     private void viewInfo(final TypedCommand command, final BuildingItem buildingItem) {
         final Form shipsForm = new Form(buildingItem.getBuilding().getName() + " info");
-        shipsForm.addCommand(buildingItem.getMidlet().getExitCommand());
-        shipsForm.setCommandListener(new InfoFormCommandListener(buildingItem.getMidlet()));
-        buildingItem.getMidlet().switchDisplayable(null, shipsForm);
+//        shipsForm.addCommand(buildingItem.getMidlet().getExitCommand());
+//        shipsForm.setCommandListener(new InfoFormCommandListener(buildingItem.getMidlet()));
+//        buildingItem.getMidlet().switchDisplayable(null, shipsForm);
+//        shipsForm.setCommandListener(shipsForm);
+//        shipsForm.s
     }
 
 
