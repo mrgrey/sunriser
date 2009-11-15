@@ -1,9 +1,5 @@
 package ru.ifmo.sunriser.view;
 
-import javax.microedition.lcdui.Graphics;
-import javax.microedition.lcdui.Item;
-import javax.microedition.lcdui.StringItem;
-import javax.microedition.midlet.MIDlet;
 import ru.ifmo.sunriser.model.IBuilding;
 
 /**
