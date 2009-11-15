@@ -14,7 +14,7 @@ public class CommandFactory {
 
     public static Command REMOVE_COMMAND = new TypedCommand("remove", Command.OK, 0, CommandAction.CANSEL);
 
-    public static Command INFO_COMMAND = new TypedCommand("remove", Command.OK, 0, CommandAction.INFO);
+    public static Command INFO_COMMAND = new TypedCommand("info", Command.OK, 0, CommandAction.INFO);
 
 
 }
