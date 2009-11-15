@@ -33,10 +33,10 @@ public class BuildingItemFactory {
         }
     }
 
-    public static Command createInfoCommand() {
-        return CommandFactory.INFO_COMMAND;
-    }
 
+    public static Item createSingleBuildingItem(IBuilding building, View midlet) {
+        return null;
+    }
 
 }
 
