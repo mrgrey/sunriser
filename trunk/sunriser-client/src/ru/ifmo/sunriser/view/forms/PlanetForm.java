@@ -29,24 +29,26 @@ public class PlanetForm extends AbstractForm {
         shipForm = new ShipForm("my ships", midlet, this, player);
         capitansForm = new CapitansForm("my capitans", midlet, this, player);
         unitsForm = new UnitsForm("my units", midlet, this, player);
-        append(createItem("buildings", buildingForm));
-        append(createItem("ships", shipForm));
-        append(createItem("capitans", capitansForm));
-        append(createItem("units", unitsForm));
+        append(createItem("buildings", buildingForm, CommandFactory.OK_COMMAND));
+        append(createItem("ships", shipForm, CommandFactory.OK_COMMAND));
+        append(createItem("capitans", capitansForm, CommandFactory.OK_COMMAND));
+        append(createItem("units", unitsForm, CommandFactory.OK_COMMAND));
     }
 
     public void commandAction(Command c, Displayable d) {
         super.commandAction(c, d);
     }
 
-    private Item createItem(final String buildings, final Form form) {
+    private Item createItem(final String buildings, final Form form, final Command command) {
         StringItem item = new StringItem(buildings, null);
         item.setItemCommandListener(new ItemCommandListener() {
             public void commandAction(Command c, Item item) {
-                midlet.switchDisplayable(null, form);
+                if (c.getCommandType() == Command.OK) {
+                    midlet.switchDisplayable(null, form);
+                }
             }
         });
-     //   item.addCommand(CommandFactory.EXIT_COMMAND);
+        item.addCommand(command);
         return item;
 
     }

@@ -16,5 +16,9 @@ public class CommandFactory {
 
     public static Command INFO_COMMAND = new TypedCommand("info", Command.OK, 0, ActionType.INFO);
 
+    public static Command EXIT_COMMAND = new Command("Exit", Command.EXIT, 0);
+
+    public static Command OK_COMMAND = new Command("OK", Command.OK, 0);
+
 
 }
