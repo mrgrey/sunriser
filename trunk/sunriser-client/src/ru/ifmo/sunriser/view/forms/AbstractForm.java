@@ -4,6 +4,7 @@ import javax.microedition.lcdui.Command;
 import javax.microedition.lcdui.CommandListener;
 import javax.microedition.lcdui.Displayable;
 import javax.microedition.lcdui.Form;
+import javax.microedition.lcdui.Item;
 import javax.microedition.xml.rpc.Type;
 import ru.ifmo.sunriser.model.Player;
 import ru.ifmo.sunriser.view.CommandFactory;
@@ -20,7 +21,11 @@ public abstract class AbstractForm extends Form implements CommandListener{
     protected final Player player;
 
     public AbstractForm(String title, View midlet, Form prevForm, Player player) {
-        super(title);
+        this(title, null, midlet, prevForm, player);
+    }
+
+    public AbstractForm(String title, Item[] items, View midlet, Form prevForm, Player player) {
+        super(title, items);
         this.midlet = midlet;
         this.prevForm = prevForm;
         this.player = player;
@@ -29,9 +34,9 @@ public abstract class AbstractForm extends Form implements CommandListener{
     }
 
     public void commandAction(Command c, Displayable d) {
-     //   if (c.getCommandType() == Command.EXIT) {
+        if (c.getCommandType() == Command.EXIT) {
             midlet.switchDisplayable(null, prevForm);
-       // }
+        }
     }
 
 

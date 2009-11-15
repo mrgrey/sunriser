@@ -20,7 +20,7 @@ public class MyBDOperations implements IDBOperations {
         return new Resources(energy, metal);
     }
 
-    public boolean build(IBuilding building) {
+    public boolean build(Building building) {
         metal -= building.getCost().getMetal();
         energy -= building.getCost().getEnergy();
         return true;

@@ -28,7 +28,7 @@ public class Player implements IPlayer {
         this.planet = idbo.getPlanet();
     }
 
-    public boolean build(IBuilding building) {
+    public boolean build(Building building) {
         final Resources cost = building.getCost();
         boolean built = false;
         if (resources.getEnergy() >= cost.getEnergy() && resources.getMetal() >= cost.getMetal()) {

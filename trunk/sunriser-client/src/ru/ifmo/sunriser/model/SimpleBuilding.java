@@ -2,13 +2,15 @@ package ru.ifmo.sunriser.model;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Vector;
+import javax.microedition.lcdui.Item;
 import ru.ifmo.sunriser.util.Time;
 
 /**
  *
  * @author vbatygin
  */
-public class SimpleBuilding implements IBuilding {
+public class SimpleBuilding implements Building {
     private final String name;
     private int state;
     private final Resources cost;
@@ -61,6 +63,10 @@ public class SimpleBuilding implements IBuilding {
                 return "not avaliabale";
         }
         throw new RuntimeException("cannot happend");
+    }
+
+    public Item[] getItems() {
+        return null;
     }
 
 

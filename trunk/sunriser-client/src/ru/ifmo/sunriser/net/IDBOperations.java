@@ -11,7 +11,7 @@ public interface IDBOperations {
 
     Resources getResources();
 
-    boolean build(IBuilding building);
+    boolean build(Building building);
 
     //<IPlanet>
     Vector getPlanets();

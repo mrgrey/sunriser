@@ -19,7 +19,13 @@ public class Game {
         Vector v = new Vector();
         v.addElement(new SimpleBuilding("solar battery", BuildingState.BUILD, cost, new Time(0, 40)));
         v.addElement(new SimpleBuilding("baracks", BuildingState.UNDER_CONSTRUCTION, cost, new Time(1, 0)));
-        v.addElement(new SimpleBuilding("robot factory", BuildingState.AVALIBLE, cost,new Time(1, 40)));
+        v.addElement(new UnitFactoryBuilding("robot factory", BuildingState.AVALIBLE, cost,new Time(1, 40),
+                new Unit() {
+
+            public boolean create() {
+                throw new UnsupportedOperationException("Not supported yet.");
+            }
+        }));
         v.addElement(new SimpleBuilding("university", BuildingState.AVALIBLE, cost, new Time(5, 0)));
         return v;
     }
