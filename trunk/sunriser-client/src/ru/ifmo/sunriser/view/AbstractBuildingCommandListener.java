@@ -10,8 +10,6 @@ import javax.microedition.lcdui.ItemCommandListener;
  */
 public abstract  class AbstractBuildingCommandListener implements ItemCommandListener {
 
-    public static String INFO = "info";
-
     public void commandAction(Command c, Item item) {
         final TypedCommand command = (TypedCommand) c;
         if (isApplicaple(command.getActionType())) {
