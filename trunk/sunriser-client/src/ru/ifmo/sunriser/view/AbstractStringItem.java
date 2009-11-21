@@ -8,21 +8,21 @@ import javax.microedition.midlet.MIDlet;
  *
  * @author vbatygin
  */
-public abstract class AbstractStringItem extends StringItem {
-    private final View midlet;
+public class AbstractStringItem extends StringItem {
+    private final GetItemsable item;
 
-    public AbstractStringItem(String label, String text, int appearanceMode, View midlet) {
+    public AbstractStringItem(String label, String text, int appearanceMode, GetItemsable item) {
         super(label, text, appearanceMode);
-        this.midlet = midlet;
+        this.item = item;
     }
 
-    public AbstractStringItem(String label, String text, View midlet) {
+    public AbstractStringItem(String label, String text, GetItemsable items) {
         super(label, text);
-        this.midlet = midlet;
+        this.item = items;
     }
 
-    public View getMidlet() {
-        return midlet;
+    public GetItemsable getObject() {
+        return item;
     }
 
 

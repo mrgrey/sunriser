@@ -7,9 +7,9 @@ package ru.ifmo.sunriser.view;
 
 import javax.microedition.midlet.*;
 import javax.microedition.lcdui.*;
-import ru.ifmo.sunriser.net.IDBOperations;
+import ru.ifmo.sunriser.net.GameState;
 import ru.ifmo.sunriser.net.MyBDOperations;
-import ru.ifmo.sunriser.view.forms.PlanetForm;
+import ru.ifmo.sunriser.view.forms.AbstractForm;
 
 /**
  * @author botdes
@@ -17,8 +17,8 @@ import ru.ifmo.sunriser.view.forms.PlanetForm;
 public class View extends MIDlet {
 
     private boolean midletPaused = false;
-    private PlanetForm planetForm;
-    private final IDBOperations sevise = new MyBDOperations();
+    private AbstractForm form;
+    private final GameState sevise = new MyBDOperations();
 
     //<editor-fold defaultstate="collapsed" desc=" Generated Fields ">//GEN-BEGIN:|fields|0|
     //</editor-fold>//GEN-END:|fields|0|
@@ -85,10 +85,13 @@ public class View extends MIDlet {
     //</editor-fold>//GEN-END:|5-switchDisplayable|2|
 
     private Form getPlanetForm() {
-        if (planetForm == null) {
-            planetForm = new PlanetForm("your planet", this, null, sevise.getPlayer());
+        if (form == null) {
+            AbstractForm f = new AbstractForm("your planet", sevise.getPlayer().getPlanet().getItems(), null);
+            AbstractForm.setGameState(sevise);
+            AbstractForm.setMidlet(this);
+            form = f;
         }
-        return planetForm;
+        return form;
     }
 
     /**

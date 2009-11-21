@@ -1,5 +1,6 @@
 package ru.ifmo.sunriser.model;
 
+import ru.ifmo.sunriser.view.GetItemsable;
 import java.util.Vector;
 import javax.microedition.lcdui.Item;
 
@@ -7,7 +8,7 @@ import javax.microedition.lcdui.Item;
  *
  * @author vbatygin
  */
-public interface  Building {
+public interface  Building extends GetItemsable {
 
     public String getName();
 
@@ -23,6 +24,6 @@ public interface  Building {
 
     public String getStatusAsString();
 
-    public Item[] getItems();
+    public GetItemsable[] getItems();
 
 }

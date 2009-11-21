@@ -1,23 +1,46 @@
 package ru.ifmo.sunriser.model;
 
 import java.util.Vector;
+import ru.ifmo.sunriser.view.GetItemsable;
 
 /**
  *
  * @author vbatygin
  */
-public class Planet implements IPlanet {
+public class Planet implements GetItemsable {
 
-    //<IBuilding>
-    public final Vector buildings;
+    public final GetItemsable[] buildings;
 
-    public Planet(Vector buildings) {
+    public Planet(GetItemsable[] buildings) {
         this.buildings = buildings;
     }
 
-    //<IBuilding>
-    public Vector getBuildings() {
+    public GetItemsable[] getItems() {
         return buildings;
+    }
+
+    public int getState() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public boolean build() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public boolean cansel() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public String getStatusAsString() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public String getName() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public String getText() {
+        throw new UnsupportedOperationException("Not supported yet.");
     }
 
 }

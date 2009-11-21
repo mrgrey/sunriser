@@ -8,7 +8,7 @@ import javax.wireless.messaging.BinaryMessage;
  *
  * @author vbatygin
  */
-public class MyBDOperations implements IDBOperations {
+public class MyBDOperations implements GameState {
 
     public MyBDOperations() {
     }
@@ -26,7 +26,7 @@ public class MyBDOperations implements IDBOperations {
         return true;
     }
 
-    public IPlanet getPlanet() {
+    public Planet getPlanet() {
        return new Planet(Game.getBuildings());
     }
 

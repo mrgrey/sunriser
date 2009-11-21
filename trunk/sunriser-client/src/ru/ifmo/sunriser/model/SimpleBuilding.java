@@ -1,10 +1,7 @@
 package ru.ifmo.sunriser.model;
 
-import java.util.Calendar;
-import java.util.Date;
-import java.util.Vector;
-import javax.microedition.lcdui.Item;
 import ru.ifmo.sunriser.util.Time;
+import ru.ifmo.sunriser.view.GetItemsable;
 
 /**
  *
@@ -15,12 +12,14 @@ public class SimpleBuilding implements Building {
     private int state;
     private final Resources cost;
     private final Time time;
+    private final GetItemsable[] items;
 
-    public SimpleBuilding(final String name, final int state, final Resources cost, Time time) {
+    public SimpleBuilding(final String name, final int state, final Resources cost, Time time, GetItemsable[] items) {
         this.name = name;
         this.state = state;
         this.cost = cost;
         this.time = time;
+        this.items = items;
 
     }
 
@@ -33,12 +32,12 @@ public class SimpleBuilding implements Building {
     }
 
     public boolean build() {
-        state = BuildingState.UNDER_CONSTRUCTION;
+        state = ItemState.UNDER_CONSTRUCTION;
         return true;
     }
 
     public boolean cansel() {
-        state = BuildingState.AVALIBLE;
+        state = ItemState.AVALIBLE;
        return true;
     }
 
@@ -52,21 +51,25 @@ public class SimpleBuilding implements Building {
 
     public String getStatusAsString() {
         switch (state) {
-            case BuildingState.AVALIBLE:
+            case ItemState.AVALIBLE:
                 return ": avalible,\nm: " + cost.getMetal() + " e: " +
                 cost.getEnergy() + "\ntime: " + time.toString();
-            case BuildingState.UNDER_CONSTRUCTION:
+            case ItemState.UNDER_CONSTRUCTION:
                 return ":under construction\ntime left: " + time.toString();
-            case BuildingState.BUILD :
+            case ItemState.BUILD :
                 return "already built";
-            case BuildingState.CLOSED:
+            case ItemState.CLOSED:
                 return "not avaliabale";
         }
         throw new RuntimeException("cannot happend");
     }
 
-    public Item[] getItems() {
-        return null;
+    public GetItemsable[] getItems() {
+        return items;
+    }
+
+    public String getText() {
+        return getStatusAsString();
     }
 
 

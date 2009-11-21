@@ -1,6 +1,7 @@
 package ru.ifmo.sunriser.model;
 
-import ru.ifmo.sunriser.net.IDBOperations;
+import ru.ifmo.sunriser.view.GetItemsable;
+import ru.ifmo.sunriser.net.GameState;
 import java.util.Vector;
 
 
@@ -10,15 +11,15 @@ import java.util.Vector;
  */
 
 public class Player implements IPlayer {
-    private final IDBOperations idbo;
+    private final GameState idbo;
     private Resources resources;
 
     //<IPlanet>
    // private Vector planets;
 
-    private IPlanet planet;
+    private Planet planet;
 
-    public Player(IDBOperations idbo) {
+    public Player(GameState idbo) {
         this.idbo = idbo;
         update();
     }
@@ -38,7 +39,7 @@ public class Player implements IPlayer {
         return built;
     }
 
-    public IPlanet getPlanet() {
+    public Planet getPlanet() {
         return planet;
     }
 

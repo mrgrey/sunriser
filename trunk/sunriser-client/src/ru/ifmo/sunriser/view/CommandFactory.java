@@ -19,6 +19,7 @@ public class CommandFactory {
     public static Command EXIT_COMMAND = new Command("Exit", Command.EXIT, 0);
 
     public static Command OK_COMMAND = new Command("OK", Command.OK, 0);
+   // public static Command REDIRECT_COMMAND
 
 
 }
