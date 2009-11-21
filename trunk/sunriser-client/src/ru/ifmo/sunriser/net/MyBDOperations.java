@@ -2,7 +2,7 @@ package ru.ifmo.sunriser.net;
 
 import ru.ifmo.sunriser.model.*;
 import java.util.Vector;
-import javax.wireless.messaging.BinaryMessage;
+import ru.ifmo.sunriser.view.GetItemsable;
 
 /**
  *
@@ -20,14 +20,16 @@ public class MyBDOperations implements GameState {
         return new Resources(energy, metal);
     }
 
-    public boolean build(Building building) {
+    public boolean build(GetItemsable building) {
         metal -= building.getCost().getMetal();
         energy -= building.getCost().getEnergy();
         return true;
     }
 
     public Planet getPlanet() {
-       return new Planet(Game.getBuildings());
+       final Planet p = new Planet(null);
+       p.setBuildings(Game.getBuildings(p));
+       return p;
     }
 
     public Vector getPlanets() {
@@ -36,6 +38,10 @@ public class MyBDOperations implements GameState {
 
     public Player getPlayer() {
         return new Player(this);
+    }
+
+    public boolean cansel(GetItemsable object) {
+        return true;
     }
 
 }

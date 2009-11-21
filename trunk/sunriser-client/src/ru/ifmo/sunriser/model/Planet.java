@@ -1,6 +1,5 @@
 package ru.ifmo.sunriser.model;
 
-import java.util.Vector;
 import ru.ifmo.sunriser.view.GetItemsable;
 
 /**
@@ -9,7 +8,7 @@ import ru.ifmo.sunriser.view.GetItemsable;
  */
 public class Planet implements GetItemsable {
 
-    public final GetItemsable[] buildings;
+    private GetItemsable[] buildings;
 
     public Planet(GetItemsable[] buildings) {
         this.buildings = buildings;
@@ -19,11 +18,11 @@ public class Planet implements GetItemsable {
         return buildings;
     }
 
-    public int getState() {
-        throw new UnsupportedOperationException("Not supported yet.");
+    public void setBuildings(GetItemsable[] buildings) {
+        this.buildings = buildings;
     }
 
-    public boolean build() {
+    public int getState() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
@@ -43,4 +42,15 @@ public class Planet implements GetItemsable {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
+    public boolean build() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    boolean build(Building building) {
+        throw new UnsupportedOperationException("Not yet implemented");
+    }
+
+    public Resources getCost() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
 }

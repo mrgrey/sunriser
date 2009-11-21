@@ -95,7 +95,7 @@ public class AbstractForm extends Form implements CommandListener{
 
         private void constructBuilding(final TypedCommand command, final AbstractStringItem stringItem) {
             GetItemsable object = stringItem.getObject();
-            if (object.build()) {
+            if (gameState.build(object)) {
                 stringItem.setText(object.getStatusAsString());
             } else {
                 stringItem.setText("cannot build");
@@ -106,7 +106,7 @@ public class AbstractForm extends Form implements CommandListener{
 
         private void canselBuilding(final TypedCommand command, final AbstractStringItem stringItem) {
             GetItemsable object = stringItem.getObject();
-            if (object.cansel()) {
+            if (gameState.cansel(object)) {
                 stringItem.setText(object.getStatusAsString());
             } else {
                 stringItem.setText("exception: cannot cansel");

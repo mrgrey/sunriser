@@ -15,10 +15,10 @@ public class Game {
      *
      * @return Vector<IBuilding>
      */
-    public static GetItemsable [] getBuildings() {
+    public static GetItemsable [] getBuildings(Planet planet) {
         final Resources cost = new Resources(100, 700);
         GetItemsable []  v = new GetItemsable[] {
-        new SimpleBuilding("solar battery", ItemState.BUILD, cost, new Time(0, 40), null),
+        BuildingFactory.createSolarBattery(ItemState.BUILD, planet),
         new SimpleBuilding("baracks", ItemState.UNDER_CONSTRUCTION, cost, new Time(1, 0), null),
         new SimpleBuilding("robot factory", ItemState.AVALIBLE, cost,new Time(1, 40),
                 new GetItemsable[] {new StupidUnit()}),
