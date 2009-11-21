@@ -16,13 +16,12 @@ public class Game {
      * @return Vector<IBuilding>
      */
     public static GetItemsable [] getBuildings(Planet planet) {
-        final Resources cost = new Resources(100, 700);
         GetItemsable []  v = new GetItemsable[] {
-        BuildingFactory.createSolarBattery(ItemState.BUILD, planet),
-        new SimpleBuilding("baracks", ItemState.UNDER_CONSTRUCTION, cost, new Time(1, 0), null),
-        new SimpleBuilding("robot factory", ItemState.AVALIBLE, cost,new Time(1, 40),
-                new GetItemsable[] {new StupidUnit()}),
-        new SimpleBuilding("university", ItemState.AVALIBLE, cost, new Time(5, 0), null)};
+        BuildingFactory.createSolarBattery(ItemState.BUILD),
+            BuildingFactory.createRobotFactory(ItemState.BUILD),
+            BuildingFactory.createBaracks(ItemState.BUILD),
+            BuildingFactory.createShipFactory(ItemState.BUILD),
+            BuildingFactory.createUniversity(ItemState.BUILD),};
         return v;
     }
 

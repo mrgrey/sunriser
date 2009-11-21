@@ -13,13 +13,16 @@ public class SimpleBuilding implements Building {
     private final Resources cost;
     private final Time time;
     private final GetItemsable[] items;
+    private final Resources resourcesAdvandage;
 
-    public SimpleBuilding(final String name, final int state, final Resources cost, Time time, GetItemsable[] items) {
+    public SimpleBuilding(final String name, final int state, final Resources cost, final Time time,
+            final GetItemsable[] items, final Resources resourcesAdvandage) {
         this.name = name;
         this.state = state;
         this.cost = cost;
         this.time = time;
         this.items = items;
+        this.resourcesAdvandage = resourcesAdvandage;
 
     }
 
@@ -71,6 +74,12 @@ public class SimpleBuilding implements Building {
     public String getText() {
         return getStatusAsString();
     }
+
+    public Resources getResourcesAdvandage() {
+        return resourcesAdvandage;
+    }
+
+   
 
 
 }
