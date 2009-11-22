@@ -4,11 +4,12 @@ package ru.ifmo.sunriser.model;
  *
  * @author vbatygin
  */
-public interface BuildingState {
+public interface ItemState {
 
     int AVALIBLE = 0;
     int UNDER_CONSTRUCTION = 1;
-    int BUILD = 2;
+    int ALREADY_BUILD = 2;
     int CLOSED = 3;
+    int REDIRECT = 4;
 
 }
