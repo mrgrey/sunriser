@@ -9,9 +9,16 @@ import ru.ifmo.sunriser.view.GetItemsable;
 public class UnitProduser implements GetItemsable {
     
     private final Unit unit;
+    private int state;
 
     public UnitProduser(Unit unit) {
         this.unit = unit;
+        state = ItemState.AVALIBLE;
+    }
+
+    public UnitProduser(Unit unit, int state) {
+        this.unit = unit;
+        this.state = state;
     }
 
     public GetItemsable[] getItems() {
@@ -37,6 +44,22 @@ public class UnitProduser implements GetItemsable {
 
     public Resources getCost() {
         return unit.getCost();
+    }
+
+    public boolean isCreatable() {
+        return true;
+    }
+
+    public boolean isInfomable() {
+        return false;
+    }
+
+    public void create() {
+        state = ItemState.UNDER_CONSTRUCTION;
+    }
+
+    public void cansel() {
+       state = ItemState.AVALIBLE;
     }
 
 }

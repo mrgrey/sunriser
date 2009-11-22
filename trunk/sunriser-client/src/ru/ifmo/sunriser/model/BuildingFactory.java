@@ -30,7 +30,7 @@ public class BuildingFactory {
     }
 
     public static Building createShipFactory(final int state) {
-        return new SimpleBuilding("Robot factory", state, new Resources(100, 500, 0, 0), new Time(1, 40),
+        return new SimpleBuilding("Ship factory", state, new Resources(100, 500, 0, 0), new Time(1, 40),
                 null, null);
     }
 

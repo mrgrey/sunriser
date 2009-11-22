@@ -10,7 +10,7 @@ public class CommandFactory {
 
     public static Command CANSEL_COMMAND = new TypedCommand("cansel", Command.OK, 0, ActionType.CANSEL);
 
-    public static Command BUILD_COMMAND = new TypedCommand("build", Command.OK, 0, ActionType.CANSEL);
+    public static Command BUILD_COMMAND = new TypedCommand("build", Command.OK, 0, ActionType.BUILD);
 
     public static Command REMOVE_COMMAND = new TypedCommand("remove", Command.OK, 0, ActionType.CANSEL);
 
@@ -19,7 +19,6 @@ public class CommandFactory {
     public static Command EXIT_COMMAND = new Command("Exit", Command.EXIT, 0);
 
     public static Command OK_COMMAND = new Command("OK", Command.OK, 0);
-   // public static Command REDIRECT_COMMAND
 
 
 }

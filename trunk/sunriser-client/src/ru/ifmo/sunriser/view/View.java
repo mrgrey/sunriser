@@ -86,10 +86,9 @@ public class View extends MIDlet {
 
     private Form getPlanetForm() {
         if (form == null) {
-            AbstractForm f = new AbstractForm("your planet", sevise.getPlayer().getPlanet().getItems(), null);
             AbstractForm.setGameState(sevise);
             AbstractForm.setMidlet(this);
-            form = f;
+            form = new AbstractForm("your planet", sevise.getPlayer().getPlanet().getItems(), null);
         }
         return form;
     }

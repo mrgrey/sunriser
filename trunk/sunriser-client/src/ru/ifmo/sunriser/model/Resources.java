@@ -33,4 +33,10 @@ public class Resources {
     public int getMetal() {
         return metal;
     }
+
+    public String toString() {
+        return "en:" + energy + "(+" + energyIncrease + ") " + "me:" + metal + "(+" + metalIncrease + ")";
+    }
+
+
 }

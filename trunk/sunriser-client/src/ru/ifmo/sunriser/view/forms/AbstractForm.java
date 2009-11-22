@@ -23,7 +23,9 @@ public class AbstractForm extends Form implements CommandListener{
 
     private static View midlet;
     private static GameState gameState;
+
     protected final Form prevForm;
+    private final AbstractStringItem resourses;
 
     public static void setGameState(GameState gameState) {
         AbstractForm.gameState = gameState;
@@ -38,15 +40,18 @@ public class AbstractForm extends Form implements CommandListener{
         this.prevForm = prevForm;
         addCommand(CommandFactory.EXIT_COMMAND);
         setCommandListener(this);
+        resourses = createResourses();
+        append(resourses);
         for (int i = 0; i < items.length; ++i) {
             final AbstractStringItem item = createItem(items[i]);
-            final Command c = createItemCommand(items[i]);
-            item.addCommand(c);
-            item.addCommand(CommandFactory.INFO_COMMAND);
-            item.setItemCommandListener(new AbstractItemCommandListener());
-            if (item != null) {
-                append(item);
+            if (items[i].isInfomable()) {
+                item.setDefaultCommand(CommandFactory.INFO_COMMAND);
             }
+            if (items[i].isCreatable()) {
+                item.addCommand(createItemCommand(items[i]));
+            }
+            item.setItemCommandListener(new AbstractItemCommandListener());
+            append(item);
         }
     }
 
@@ -60,13 +65,17 @@ public class AbstractForm extends Form implements CommandListener{
         return new AbstractStringItem(item.getName(), item.getText(), item);
     }
 
+    public AbstractStringItem createResourses() {
+        return new AbstractStringItem("resourses", gameState.getResources().toString(), null);
+    }
+
     private static Command createItemCommand(GetItemsable item) {
         switch (item.getState()) {
             case ItemState.AVALIBLE:
                 return CommandFactory.BUILD_COMMAND;
             case ItemState.UNDER_CONSTRUCTION:
                 return CommandFactory.CANSEL_COMMAND;
-            case ItemState.BUILD:
+            case ItemState.ALREADY_BUILD:
                 return CommandFactory.REMOVE_COMMAND;
             case ItemState.REDIRECT:
                 return CommandFactory.INFO_COMMAND;
@@ -91,6 +100,7 @@ public class AbstractForm extends Form implements CommandListener{
                     viewInfo(command, stringItem);
                     break;
             }
+            resourses.setText(gameState.getResources().toString());
         }
 
         private void constructBuilding(final TypedCommand command, final AbstractStringItem stringItem) {
@@ -101,7 +111,7 @@ public class AbstractForm extends Form implements CommandListener{
                 stringItem.setText("cannot build");
             }
             stringItem.removeCommand(command);
-            stringItem.setDefaultCommand(CommandFactory.CANSEL_COMMAND);
+            stringItem.addCommand(CommandFactory.CANSEL_COMMAND);
         }
 
         private void canselBuilding(final TypedCommand command, final AbstractStringItem stringItem) {

@@ -34,16 +34,6 @@ public class SimpleBuilding implements Building {
         return name;
     }
 
-    public boolean build() {
-        state = ItemState.UNDER_CONSTRUCTION;
-        return true;
-    }
-
-    public boolean cansel() {
-        state = ItemState.AVALIBLE;
-       return true;
-    }
-
     public Resources getCost() {
         return cost;
     }
@@ -59,7 +49,7 @@ public class SimpleBuilding implements Building {
                 cost.getEnergy() + "\ntime: " + time.toString();
             case ItemState.UNDER_CONSTRUCTION:
                 return ":under construction\ntime left: " + time.toString();
-            case ItemState.BUILD :
+            case ItemState.ALREADY_BUILD :
                 return "already built";
             case ItemState.CLOSED:
                 return "not avaliabale";
@@ -77,6 +67,22 @@ public class SimpleBuilding implements Building {
 
     public Resources getResourcesAdvandage() {
         return resourcesAdvandage;
+    }
+
+    public boolean isCreatable() {
+        return true;
+    }
+
+    public boolean isInfomable() {
+        return true;
+    }
+
+    public void create() {
+        state = ItemState.UNDER_CONSTRUCTION;
+    }
+
+    public void cansel() {
+        state = ItemState.AVALIBLE;
     }
 
    

@@ -17,10 +17,11 @@ public class MyBDOperations implements GameState {
     private int energy = 1000;
 
     public Resources getResources() {
-        return new Resources(energy, metal);
+        return new Resources(energy, metal, 100, 100);
     }
 
     public boolean build(GetItemsable building) {
+        building.create();
         metal -= building.getCost().getMetal();
         energy -= building.getCost().getEnergy();
         return true;
@@ -41,6 +42,7 @@ public class MyBDOperations implements GameState {
     }
 
     public boolean cansel(GetItemsable object) {
+        object.cansel();
         return true;
     }
 

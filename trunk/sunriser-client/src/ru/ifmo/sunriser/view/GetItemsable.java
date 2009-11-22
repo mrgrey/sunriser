@@ -19,4 +19,13 @@ public interface GetItemsable {
     public String getText();
 
     public Resources getCost();
+
+    public boolean isCreatable();
+
+    public boolean isInfomable();
+
+    public void create();
+
+    public void cansel();
+
 }

@@ -26,10 +26,6 @@ public class Planet implements GetItemsable {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public boolean cansel() {
-        throw new UnsupportedOperationException("Not supported yet.");
-    }
-
     public String getStatusAsString() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
@@ -42,15 +38,23 @@ public class Planet implements GetItemsable {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    public boolean build() {
+    public Resources getCost() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 
-    boolean build(Building building) {
-        throw new UnsupportedOperationException("Not yet implemented");
+    public boolean isCreatable() {
+        return false;
     }
 
-    public Resources getCost() {
+    public boolean isInfomable() {
+        return true;
+    }
+
+    public void create() {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+
+    public void cansel() {
         throw new UnsupportedOperationException("Not supported yet.");
     }
 }
